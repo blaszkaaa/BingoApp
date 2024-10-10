@@ -153,7 +153,7 @@ Ten projekt jest objęty licencją MIT. Zobacz plik LICENSE po więcej informacj
 
 Masz pytania lub sugestie? Skontaktuj się z nami:
 
-	•	Email: twojemail@example.com
-	•	GitHub: @TwojaNazwaUzytkownika
+	•	Email: mateuszniema1@gmail.com
+	•	GitHub: @blaszkaaa
 
 Dziękujemy za zainteresowanie Bingo Nauczycieli! Życzymy miłej zabawy i sukcesów w grze! 🍀
