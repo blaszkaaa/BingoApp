@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo Nauczycieli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Ikona strony -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">🎓 Bingo Nauczycieli</a>
+            <button id="logout-btn" class="btn btn-outline-light ms-auto d-none">Wyloguj się</button>
+        </div>
+    </nav>
+
+    <!-- Sekcja komunikatu o wygranej -->
+    <div id="bingo-status" class="text-center mt-3 text-danger"></div>
+
+    <!-- Main Container -->
+    <div class="container mt-3">
+        <!-- Authentication Section -->
+        <div id="auth-section" class="text-center">
+            <h2 class="mb-4">Zaloguj się lub Zarejestruj</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <input type="text" id="auth-username" class="form-control mb-3" placeholder="Nazwa użytkownika">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <input type="password" id="auth-password" class="form-control mb-3" placeholder="Hasło">
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-12 col-sm-6 col-md-4 mx-auto">
+                <button id="login-btn" class="btn btn-primary">Zaloguj się</button>
+                <button id="register-btn" class="btn btn-outline-primary">Zarejestruj się</button>
+            </div>
+            <div id="auth-error" class="text-danger mt-3"></div>
+
+            <!-- Instrukcje aplikacji -->
+            <div id="app-instructions" class="mt-5">
+                <h3>📖 Jak korzystać z aplikacji Bingo Nauczycieli</h3>
+                <ol class="mt-3 text-start mx-auto" style="max-width: 600px;">
+                    <li><strong>Zaloguj się lub zarejestruj:</strong> Użyj formularza powyżej, aby zalogować się na swoje konto lub utworzyć nowe.</li>
+                    <li><strong>Stwórz lub dołącz do pokoju:</strong> Po zalogowaniu, wybierz unikalną nazwę pokoju i ustaw hasło, aby stworzyć nowy pokój. Możesz też dołączyć do istniejącego pokoju, wpisując jego nazwę i hasło.</li>
+                    <li><strong>Utwórz swoją kartę Bingo:</strong> Jeśli nie masz jeszcze zapisanej karty, wypełnij pola na planszy własnymi hasłami lub wyrażeniami. Upewnij się, że wszystkie pola są wypełnione.</li>
+                    <li><strong>Zapisz kartę:</strong> Kliknij przycisk "💾 Zapisz Kartę", aby zapisać swoją kartę na przyszłe gry.</li>
+                    <li><strong>Graj w Bingo:</strong> Podczas gry klikaj na pola, które zostały wywołane lub które spełniają określone kryteria. Pola zostaną zaznaczone.</li>
+                    <li><strong>Sprawdź wygraną:</strong> Aplikacja automatycznie sprawdzi, czy masz wygrywającą kombinację. Jeśli tak, ogłosi Twoją wygraną wszystkim uczestnikom pokoju.</li>
+                    <li><strong>Komunikuj się na czacie:</strong> Użyj wbudowanego czatu, aby rozmawiać z innymi graczami w pokoju.</li>
+                    <li><strong>Wyloguj się:</strong> Po zakończeniu gry możesz wylogować się, klikając przycisk "Wyloguj się" w prawym górnym rogu.</li>
+                </ol>
+                <p class="mt-3">Miłej zabawy i powodzenia! 🍀</p>
+            </div>
+        </div>
+
+        <!-- Main Section -->
+        <div id="main-section" class="d-none">
+            <!-- Room Section -->
+            <div id="room-section" class="text-center">
+                <h2 class="mb-4">Stwórz lub dołącz do pokoju</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <input type="text" id="room-name" class="form-control mb-3" placeholder="Nazwa pokoju">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <input type="password" id="room-password" class="form-control mb-3" placeholder="Hasło do pokoju">
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-12 col-sm-6 col-md-4 mx-auto">
+                    <button id="create-room-btn" class="btn btn-success">🛠️ Stwórz pokój</button>
+                    <button id="join-room-btn" class="btn btn-outline-success">🔑 Dołącz do pokoju</button>
+                </div>
+
+                <!-- Sekcja rankingu -->
+                <div id="rankings-section" class="mt-5">
+                    <h3>🏆 Ranking Użytkowników</h3>
+                    <ul id="rankings-list" class="list-group list-group-flush mx-auto" style="max-width: 400px;">
+                        <!-- Ranking zostanie wygenerowany dynamicznie -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bingo Section -->
+            <div id="bingo-section" class="d-none mt-5">
+                <div class="row">
+                    <!-- Bingo Card -->
+                    <div class="col-12 col-md-8">
+                        <h2 class="mb-4">Twoja Karta Bingo</h2>
+                        <div class="table-responsive">
+                            <table id="bingo-card" class="table table-bordered text-center">
+                                <!-- Bingo card will be generated here -->
+                            </table>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button id="save-card-btn" class="btn btn-primary mt-3 d-none">💾 Zapisz Kartę</button>
+                            <button id="delete-card-btn" class="btn btn-warning mt-3 d-none">🗑️ Usuń Kartę</button>
+                            <button id="reset-btn" class="btn btn-danger mt-3 d-none">🔄 Resetuj zaznaczenia</button>
+                        </div>
+                    </div>
+                    <!-- Chat -->
+                    <div class="col-12 col-md-4 mt-4 mt-md-0">
+                        <h2 class="mb-4">Czat 💬</h2>
+                        <div id="chat-window" class="border rounded p-3 mb-3 chat-window"></div>
+                        <div class="input-group mb-2">
+                            <input type="text" id="chat-input" class="form-control" placeholder="Wpisz wiadomość">
+                            <button id="send-chat-btn" class="btn btn-primary">Wyślij</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Users List -->
+                <div class="mt-3 text-center">
+                    <h3>👥 Użytkownicy w pokoju:</h3>
+                    <ul id="user-list" class="list-group list-group-flush mx-auto" style="max-width: 300px;">
+                        <!-- Users will be listed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

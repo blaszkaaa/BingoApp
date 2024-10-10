@@ -1,0 +1,21 @@
+{"level":"info","message":"Serwer działa na porcie 420","timestamp":"2024-10-08T19:39:12.048Z"}
+{"level":"info","message":"Serwer działa na porcie 420","timestamp":"2024-10-08T19:42:45.078Z"}
+{"level":"info","message":"Inicjalizowanie pustej listy zbanowanych użytkowników.","timestamp":"2024-10-08T19:53:21.010Z"}
+{"level":"info","message":"Serwer działa na porcie 420","timestamp":"2024-10-08T19:53:21.097Z"}
+{"level":"info","message":"Nowe połączenie: PgXcMD8mVPiTKa7hAAAB","timestamp":"2024-10-08T19:53:40.140Z"}
+{"level":"info","message":"Użytkownik zalogowany: blaszka","timestamp":"2024-10-08T19:53:44.654Z"}
+{"level":"info","message":"Utworzono pokój: 123 przez użytkownika blaszka","timestamp":"2024-10-08T19:53:48.384Z"}
+{"level":"info","message":"Bingo wygrane przez: blaszka w pokoju: 123","timestamp":"2024-10-08T19:53:58.622Z"}
+{"level":"info","message":"Zapisano plik user_stats.json","timestamp":"2024-10-08T19:53:58.624Z"}
+{"level":"info","message":"Użytkownik wylogowany: blaszka","timestamp":"2024-10-08T19:54:20.793Z"}
+{"level":"info","message":"Użytkownik blaszka opuścił pokój: 123","timestamp":"2024-10-08T19:54:20.794Z"}
+{"level":"info","message":"Rozłączono: PgXcMD8mVPiTKa7hAAAB (blaszka)","timestamp":"2024-10-08T19:54:20.795Z"}
+{"level":"info","message":"Nowe połączenie: bw1yaDAao5dLYnq5AAAD","timestamp":"2024-10-08T19:54:20.838Z"}
+{"level":"info","message":"Użytkownik zalogowany: blaszka","timestamp":"2024-10-08T19:54:24.709Z"}
+{"level":"info","message":"Użytkownik wylogowany: blaszka","timestamp":"2024-10-08T20:03:01.116Z"}
+{"level":"info","message":"Rozłączono: bw1yaDAao5dLYnq5AAAD (blaszka)","timestamp":"2024-10-08T20:03:01.129Z"}
+{"level":"info","message":"Inicjalizowanie pustej listy zbanowanych użytkowników.","timestamp":"2024-10-08T20:11:20.511Z"}
+{"level":"info","message":"Inicjalizowanie pustej listy zbanowanych użytkowników.","timestamp":"2024-10-08T20:11:30.679Z"}
+{"level":"info","message":"Inicjalizowanie pustej listy zbanowanych użytkowników.","timestamp":"2024-10-08T20:11:37.411Z"}
+{"level":"info","message":"Serwer działa na porcie 420","timestamp":"2024-10-08T20:11:37.491Z"}
+{"level":"info","message":"Inicjalizowanie pustej listy zbanowanych użytkowników.","timestamp":"2024-10-08T20:24:13.224Z"}
